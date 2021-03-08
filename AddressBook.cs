@@ -15,14 +15,22 @@ namespace AddressBook
             }
             catch (ArgumentException)
             {
-                Console.WriteLine("Hey dummy it broke!");
+                Console.WriteLine("Hey dummy it broke! Contact already added.");
             }
-
         }
 
         public Contact GetByEmail(string email)
         {
-            return Contacts[email];
+            try
+            {
+                return Contacts[email];
+            }
+            catch (KeyNotFoundException)
+            {
+                Console.WriteLine("This email address was not found.");
+                return null;
+            }
+
         }
     }
 }
