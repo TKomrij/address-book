@@ -73,6 +73,11 @@ namespace AddressBook
                     Console.WriteLine($"Email: {contact.Email}");
                     Console.WriteLine($"Address: {contact.Address}");
                 }
+                else
+                {
+                    Console.WriteLine("----------------------------");
+                    Console.WriteLine($"Contact is null for {email}");
+                }
             }
         }
     }
